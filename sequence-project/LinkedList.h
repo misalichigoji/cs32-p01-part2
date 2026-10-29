@@ -14,9 +14,11 @@
 #include <initializer_list>
 #include <ostream>
 #include <stdexcept>
+#include "Sequence.h"
+#include "Sequence.cpp"
 
 template <typename T>
-class LinkedList {
+class LinkedList : public Sequence {
 public:
     LinkedList();                              // empty list
     LinkedList(std::initializer_list<T> il);   // LinkedList<int> l{1, 2, 3};

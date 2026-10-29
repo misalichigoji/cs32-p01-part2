@@ -19,6 +19,8 @@
 #include <cstddef>
 #include <initializer_list>
 #include <stdexcept>
+#include "Sequence.h"
+#include "Sequence.cpp"
 
 template <typename T>
 class Vector {
