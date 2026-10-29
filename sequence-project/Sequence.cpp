@@ -94,16 +94,24 @@ void Sequence<T>::pop_back() {
 // Returns true if some element compares equal (==) to value.
 template <typename T>
 bool Sequence<T>::contains(const T& value) const {
-    // TODO
-    throw std::logic_error("contains() not implemented");
+    for(std::size_t i = 0; i < size(); i++)
+    {
+        if(at(i) == value)
+            return true;
+    }
+    return false;
 }
 
 // Returns the index of the first element that compares equal (==) to value,
 // or -1 if there is none.
 template <typename T>
 int Sequence<T>::indexOf(const T& value) const {
-    // TODO
-    throw std::logic_error("indexOf() not implemented");
+    for(std::size_t i = 0; i < size(); i++)
+    {
+        if(at(i) == value)
+            return static_cast<int>(i);
+    }
+    return -1;
 }
 
 // Writes the elements to os in this exact format, with no newline:
