@@ -28,27 +28,27 @@
 template <typename T>
 std::size_t Sequence<T>::size() const {
     throw std::logic_error("Sequence::size() not implemented");
-}
+} //dont have to implement - pure virtual function
 
 template <typename T>
 T& Sequence<T>::at(std::size_t) {
     throw std::logic_error("Sequence::at() not implemented");
-}
+} //dont have to implement - pure virtual function
 
 template <typename T>
 const T& Sequence<T>::at(std::size_t) const {
     throw std::logic_error("Sequence::at() const not implemented");
-}
+}//dont have to implement - pure virtual function
 
 template <typename T>
 void Sequence<T>::insert(std::size_t, const T&) {
     throw std::logic_error("Sequence::insert() not implemented");
-}
+}//dont have to implement - pure virtual function
 
 template <typename T>
 void Sequence<T>::erase(std::size_t) {
     throw std::logic_error("Sequence::erase() not implemented");
-}
+}//dont have to implement - pure virtual function
 
 // ---- Shared operations ----
 //
@@ -57,39 +57,38 @@ void Sequence<T>::erase(std::size_t) {
 // Returns true if the sequence has no elements.
 template <typename T>
 bool Sequence<T>::empty() const {
-    // TODO
-    throw std::logic_error("empty() not implemented");
+    return size() == 0;
 }
 
 // Returns a reference to the first element.
 // Throws std::out_of_range if the sequence is empty.
 template <typename T>
 T& Sequence<T>::front() {
-    // TODO
-    throw std::logic_error("front() not implemented");
+    return at(0);
 }
 
 // Returns a reference to the last element.
 // Throws std::out_of_range if the sequence is empty.
 template <typename T>
 T& Sequence<T>::back() {
-    // TODO
-    throw std::logic_error("back() not implemented");
+    if(empty())
+        throw std::out_of_range("sequence is empty");
+    return at(size() - 1);
 }
 
 // Appends a copy of value to the end.
 template <typename T>
 void Sequence<T>::push_back(const T& value) {
-    // TODO
-    throw std::logic_error("push_back() not implemented");
+    insert(size(), value);
 }
 
 // Removes the last element.
 // Throws std::out_of_range if the sequence is empty.
 template <typename T>
 void Sequence<T>::pop_back() {
-    // TODO
-    throw std::logic_error("pop_back() not implemented");
+    if(size() == 0)
+        throw std::out_of_range("contianer empty");
+    erase(size() - 1); 
 }
 
 // Returns true if some element compares equal (==) to value.

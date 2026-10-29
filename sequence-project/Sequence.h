@@ -49,10 +49,10 @@ public:
     bool empty() const;
     T& front();
     T& back();
-    void push_back(const T& value);
+    virtual void push_back(const T& value);
     void pop_back();
-    bool contains(const T& value) const;
-    int indexOf(const T& value) const;
+    virtual bool contains(const T& value) const;
+    virtual int indexOf(const T& value) const;
     void print(std::ostream& os) const;
     virtual ~Sequence();
 };
