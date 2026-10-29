@@ -135,15 +135,20 @@ void Sequence<T>::print(std::ostream& os) const {
 // Vector can equal a LinkedList.
 template <typename T>
 bool operator==(const Sequence<T>& a, const Sequence<T>& b) {
-    // TODO
-    throw std::logic_error("operator== not implemented");
+    if(a.size() != b.size())
+        return false;
+    for(std::size_t i = 0; i < a.size(); i++)
+    {
+        if(at(i) != b(i))
+            return false;
+    }
+    return true;
 }
 
 // Returns true if a and b are not equal.
 template <typename T>
 bool operator!=(const Sequence<T>& a, const Sequence<T>& b) {
-    // TODO
-    throw std::logic_error("operator!= not implemented");
+    return !(a == b);
 }
 
 #endif
