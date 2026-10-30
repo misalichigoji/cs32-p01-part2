@@ -125,9 +125,16 @@ int Sequence<T>::indexOf(const T& value) const {
 // shows the idea (it walks nodes, which Sequence can't, but the os << parts
 // are what you need).
 template <typename T>
-void Sequence<T>::print(std::ostream& os) const {
-    // TODO
-    throw std::logic_error("print() not implemented");
+void Sequence<T>::print(std::ostream& os) const 
+{
+    os << "[";
+    for(std::size_t i = 0; i < size(); i++)
+    {
+        os << at(i);
+        if(i != size() - 1)
+            os << ", ";
+    }
+    os << "]";
 }
 
 // Returns true if a and b have the same size and every pair of elements
