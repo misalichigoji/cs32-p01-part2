@@ -23,7 +23,7 @@
 #include "Sequence.cpp"
 
 template <typename T>
-class Vector {
+class Vector : public Sequence<T>{
 public:
     // When the buffer is full, the new capacity is:
     //     max(capacity + 1, (size_t)(capacity * growth_factor))

@@ -146,7 +146,7 @@ bool operator==(const Sequence<T>& a, const Sequence<T>& b) {
         return false;
     for(std::size_t i = 0; i < a.size(); i++)
     {
-        if(at(i) != b(i))
+        if(a.at(i) != b.at(i))
             return false;
     }
     return true;
