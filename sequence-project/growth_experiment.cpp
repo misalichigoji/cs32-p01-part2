@@ -28,9 +28,9 @@ GrowthStats measure_growth(double factor, std::size_t n) {
     {
         temp = a.capacity();
         a.push_back(1);
-        if(a.capacity() != temp;)
+        if(a.capacity() != temp)
         {
-            reallocations==;
+            reallocations++;
             elements_copied += a.size();
         }
     }
