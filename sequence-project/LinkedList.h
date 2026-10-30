@@ -34,8 +34,6 @@ public:
 
     // throws std::out_of_range if empty
     void push_back(const T& value) override;
-    bool contains(const T& value) const override;
-    int indexOf(const T& value) const override;         // -1 if not found
 
 private:
     struct Node {

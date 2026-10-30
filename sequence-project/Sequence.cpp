@@ -158,4 +158,7 @@ bool operator!=(const Sequence<T>& a, const Sequence<T>& b) {
     return !(a == b);
 }
 
+template <typename T>
+Sequence<T>::~Sequence()
+{}
 #endif
