@@ -50,7 +50,7 @@ public:
     T& front();
     T& back();
     virtual void push_back(const T& value);
-    void pop_back();
+    virtual void pop_back();
     virtual bool contains(const T& value) const;
     virtual int indexOf(const T& value) const;
     void print(std::ostream& os) const;
